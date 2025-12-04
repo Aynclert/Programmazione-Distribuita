@@ -5,14 +5,14 @@ La trasparenza serve anche a permettere un alto riuso delle applicazioni svilupp
 
 Abbiamo diversi tipi di trasparenza, distribuiti su 3 livelli:
 1. Primo livello:
-	1. Trasparenza di accesso: nasconde le differenze nella rappresentazione dei dati e nel meccanismo di invocazione per permettere l’interoperabilità tra oggetti, che devono essere accessibili, attraverso la stessa interfaccia, sia in locale che da remoto;
-	2. Trasparenza di locazione
+	1. **Trasparenza di accesso**: nasconde le differenze nella rappresentazione dei dati e nel meccanismo di invocazione per permettere l’interoperabilità tra oggetti, che devono essere accessibili, attraverso la stessa interfaccia, sia in locale che da remoto;
+	2. **Trasparenza di locazione**:  non permette di utilizzare informazioni circa la localizzazione nel sistema di una particolare componente, che viene identificata ed utilizzata in maniera indipendente dalla sua posizione. Questo fornisce una vista logica del sistema di naming, in modo da disaccoppiare il nome da una posizione all’interno della rete;
 2. Secondo livello:
-	1. Trasparenza di migrazione
-	2. Trasparenza di replica
-	3. Trasparenza alla persistenza
-	4. Trasparenza alle transazioni
+	1. **Trasparenza di migrazione**: il compito di questo tipo di trasparenza è quello di nascondere la possibilità che il sistema faccia migrare un oggetto da un nodo ad un altro, continuando ad essere raggiungibile ed utilizzabile da altri oggetti. La trasparenza di migrazione dipende dalla trasparenza di accesso e dalla trasparenza di locazione; 
+	2. **Trasparenza di replica**: il sistema maschera il fatto che una singola componente viene replicata da un certo numero di copie (repliche) posizionate su altri nodi del sistema, e che offrono esattamente lo stesso tipo di servizio della componente originale. La trasparenza di replica dipende dalla trasparenza di accesso e dalla trasparenza di locazione; 
+	3. **Trasparenza alla persistenza**: scherma l’utente dalle operazioni che compie il sistema per rendere persistente un oggetto. Gli oggetti di utilizzo raro non vengono mantenuti attivi ma vengono de-attivati, e memorizzati all’interno della memoria secondaria e riattivati poi successivamente quando c’è ne è una richiesta. La trasparenza alla persistenza si basa sulla trasparenza di locazione;
+	4. **Trasparenza alle transazioni**: nasconde all’utente le attività di coordinamento che vengono svolte per assicurare la consistenza dello stato degli oggetti in presenza della concorrenza. Sia l’utente che il progettista e lo sviluppatore sono ignari delle attività che vengono svolte per assicurare la atomicità delle operazioni e possono semplicemente ritenersi gli unici utenti all’interno del sistema;
 3. Terzo livello:
-	1. Trasparenza alla scalabilità
-	2. Trasparenza alle prestazioni
-	3. Trasparenza ai malfunzionamenti
+	1. **Trasparenza alla scalabilità**: un sistema viene detto scalabile quando è in grado di poter servire carichi di lavoro via via crescenti senza dover modificare la propria architettura e la propria organizzazione. La trasparenza alla scalabilità si basa sulla trasparenza di replica e sulla trasparenza di migrazione;
+	2. **Trasparenza alle prestazioni**: rende il progettista/sviluppatore ignaro dei meccanismi che vengono utilizzati per ottimizzare le prestazioni del sistema, durante la fornitura di servizi. Il sistema può provvedere ad implementare politiche di bilanciamento del carico, spostando componenti da nodi carichi di lavoro verso nodi che hanno maggiori disponibilità di calcolo a disposizione, oppure politiche di minimizzazione della latenza, avvicinando componenti su nodi più vicini agli utenti che li usano più frequentemente, oppure politiche di ottimizzazione delle risorse di memoria, che prevedono la inattivazione di oggetti che non vengono usati frequentemente e che possono essere re-attivati se necessario. La trasparenza alle prestazioni si basa sulla trasparenza alla migrazione, sulla trasparenza alla replica e sulla trasparenza alla persistenza.
+	3. **Trasparenza ai malfunzionamenti**: nasconde ad un oggetto il malfunzionamento di oggetti con i quali sta inter-operando.  Si poggia sulla trasparenza di replica e sulla trasparenza alle transazioni.
