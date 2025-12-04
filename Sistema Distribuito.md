@@ -1,5 +1,5 @@
 
-Insieme di macchine autonome connesse attraverso una rete. Ogni nodo del sistema distribuito esegue un insieme di componenti che comunicano e coordinano il proprio lavoro attraverso un #Middleware  .
+Insieme di macchine autonome connesse attraverso una rete. Ogni nodo del sistema distribuito esegue un insieme di componenti che comunicano e coordinano il proprio lavoro attraverso un [[Middleware]] .
 
 I sistemi distribuiti rispondono a motivazioni sia di tipo economico che di natura tecnologica:
 - Motivazioni economiche: i sistemi distribuiti rispondono in maniera precisa alle esigenze ed alle richieste della economia di mercato che è caratterizzata da numerose e frequenti acquisizioni, integrazioni e fusioni di aziende. I sistemi distribuiti rispondono anche alla esigenza del mercato specifico dell’ Information Technology, dove il tempo necessario per poter arrivare al prodotto finale, dalla ideazione, progettazione e realizzazione deve essere reso quanto più breve possibile, sia per il ricambio tecnologico continuo, ma anche perché le richieste dei consumatori variano significativamente in poco tempo;
