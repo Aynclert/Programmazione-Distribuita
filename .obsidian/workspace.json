@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d5413aa8e97b1453",
+        "id": "0191810136eaab11",
         "type": "tabs",
         "children": [
           {
-            "id": "ad438d30eca2a2ce",
+            "id": "484a48e7fbb1d949",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -164,13 +164,23 @@
               "icon": "lucide-list",
               "title": "Struttura di Sistema Distribuito"
             }
+          },
+          {
+            "id": "e1f8ed52e6d819fa",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,9 +190,14 @@
       "daily-notes:Apri nota del giorno": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ad438d30eca2a2ce",
-  "lastOpenFiles": []
+  "active": "484a48e7fbb1d949",
+  "lastOpenFiles": [
+    "Sistema Distribuito.md",
+    "Nuovo Documento di testo.txt",
+    "Sistema Distribuito.md"
+  ]
 }
