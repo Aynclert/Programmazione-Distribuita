@@ -9,10 +9,16 @@ Context-switch: la context switch è una particolare operazione del sistema oper
 La programmazione distribuita implica la conoscenza (di base) della programmazione concorrente, di cui vi sono 3 tipi:
 1. programmazione concorrente eseguita su calcolatori diversi;
 2. processi concorrenti sulla stessa macchina (multitasking): processo padre che genera processi figli per fork ();
-3. programmazione concorrente nello stesso processo: “processi lightweight” all’interno del processo, chiamati #thread.
+3. programmazione concorrente nello stesso proceora ci sono sso: “processi lightweight” all’interno del processo, chiamati #thread.
 
 Il multithread è l’estensione del multitask riferito ad un singolo programma, è in grado di
 eseguire più thread “contemporaneamente”.
 I #thread, a differenza dei processi, hanno a disposizione e condividono gli stessi dati (trovandosi all’interno dello stesso processo).
 
 [[Thread in Java]]
+
+I thread possono raggiungere degli stati di blocco, ovvero:
+- **Deadlock**: due thread sono bloccati, ognuno in attesa dell'altro;
+- **Starvation**: un thread non è in grado di ottenere accesso regolare alle risorse condivise e non riesce ad avanzare;
+- **Livelock**: un primo thread risponde all'azione di un secondo thread, il quale risponde all'azione del primo. I due thread non sono bloccati, ma non c'è progresso.
+
