@@ -5,8 +5,7 @@ Gli oggetti distribuiti si trovano alla confluenza di due aree della tecnologia 
 
 L'obiettivo è quello di realizzare servizi distribuiti riutilizzabili efficienti, flessibili, sicuri e robusti. Il tutto basato su un’architettura che utilizza come risorse dei nodi eterogenei, sia per l’hardware che per il software. Questa integrazione viene realizzata attraverso il middleware ad oggetti distribuiti, che risiede tra le applicazioni e lo strato sistema operativo.
 
-Lo scopo del middleware è quello di rendere semplici questi compiti e di fornire delle astrazioni
-appropriate per i programmatori, ed è suddiviso in tre strati:
+Lo scopo del middleware è quello di rendere semplici questi compiti e di fornire delle astrazioni appropriate per i programmatori, ed è suddiviso in tre strati:
 1. **Middleware di infrastruttura**: si occupa delle comunicazioni tra i sistemi operativi diversi e della gestione della concorrenza;
 2. **Middleware di distribuzione**: basa i suoi servizi sul middleware d’infrastruttura per automatizzare operazioni comuni per la comunicazione. Tra i compiti più importanti abbiamo:
 	1. richiedere un servizio ad un altro nodo potendo inviare parametri ( #marshalling) tra piattaforme hardware/software diversi;
