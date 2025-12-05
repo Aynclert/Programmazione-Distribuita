@@ -14,3 +14,31 @@ Queste funzionalità sono offerte dal package *java.net* attraverso due classi:
 - *ServerSocket*: implementa un #socket di connessione che attende richieste da parte di #Client. Quando ne riceve una, assegna un #socket alla connessione bidirezionale, restituendo l'oggetto #socket che viene utilizzato per la connessione;
 - *Socket*.
 
+La comunicazione tra #Client e #Server avviene attraverso la scrittura e la lettura di #stream associati con il #socket e che permettono una facile interazione per poter trasmettere istanze di classi Java attraverso il meccanismo di #serializzazione. Gli stream I/O sono utili per trattare una sequenza di dati "diretta a"/"proveniente da" diverse entità, quali file, memoria, socket, ecc.
+Gli stream sono presenti nel package *java.io*, e le classi da esso fornite sono:
+- *InputStream*, di cui la sottoclasse più importante è *ObjectInputStream poiché essa fornisce il meccanismo di deserializzazione quando riceve un oggetto serializzato da ObjectOutputStream;
+- *OutputStream*, di cui la sottoclasse più importante è *ObjectOutputStream*.
+- 
+Gli oggetti che possono essere trasmessi sugli #stream devono implementare l'interfaccia **serializable** o **Externalizable**, mentre i tipi primitivi possono essere letti tramite i seguenti metodi:
+- *readByte()*;
+- *readFloat()*.
+
+Gli #stream vengono creati attraverso il meccanismo di #wrapping, ovvero ogni classe via via più specializzata prende come argomento per il costruttore un'istanza delle classi più alte nella gerarchia. 
+```Java
+ObjectInputStream inStream = new ObjectInputStream(Socket.getInputStream());
+```
+
+A questo scopo, tra le classi derivanti dalla classe *Reader* esiste la classe *InputStreamReader* che rappresenta la connessione tra gli stream binari e quelli di testo.
+Un'altra classe utile è la classe *BufferedReader* che fornisce una bufferizzazione di uno #streamdu input di testo allo scopo di aumentare l'efficienza.
+```Java
+BufferedReader bin = new BufferedReader (new InputStreamReader(System.in));
+```
+
+La sequenza di istruzioni classicamente usate per accedere agli #stream di un #socket lato #Server è:
+```Java
+ServerSocket serverSocket = new ServerSocket(9000);
+socket = serverSocket.accept();
+System.out.println("Accettata una connessione... attendo comandi");
+ObjectInputStream inStream = new ObjectInputStream(socket.getInputStream());
+ObjectOutputStream outStream = new ObjectOutputStream(socket.getOutputStream());
+```
