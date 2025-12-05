@@ -9,4 +9,3 @@ I #socket TCP sono gli endpoint di una comunicazione bidirezionale sulla rete ch
 - **Client**: il programma conosce l'indirizzo della macchina su cui è in esecuzione il server ed il suo numero di porta. Il client deve anche comunicare al server il numero di porta locale sulla quale riceverà i dati.
 
 Il procedimento di connessione prevede che il server debba *accettare* la connessione e che assegni un nuovo #socket per la comunicazione bidirezionale tra client e server.
-
