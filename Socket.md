@@ -1,4 +1,4 @@
-
+git 
 Java fornisce le API per la programmazione di rete nel package *java.net*, al cui interno sono presenti classi come *InetAddress*.
 La comunicazione tra programmi su Internet avviene tramite il protocollo TCP/IP, e vengono usati i #socket per ricevere e trasmettere i dati.
 Il protocollo TCP (Transmission Control Protocol) offre una connessione affidabile, mentre l'UDP (User Datagram Protocol) permette di inviare pacchetti dati ( #datagram ).
