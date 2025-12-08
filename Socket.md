@@ -29,7 +29,7 @@ ObjectInputStream inStream = new ObjectInputStream(Socket.getInputStream());
 ```
 
 A questo scopo, tra le classi derivanti dalla classe *Reader* esiste la classe *InputStreamReader* che rappresenta la connessione tra gli stream binari e quelli di testo.
-Un'altra classe utile è la classe *BufferedReader* che fornisce una bufferizzazione di uno #streamdu input di testo allo scopo di aumentare l'efficienza.
+Un'altra classe utile è la classe *BufferedReader* che fornisce una bufferizzazione di uno #stream di input di testo allo scopo di aumentare l'efficienza.
 ```Java
 BufferedReader bin = new BufferedReader (new InputStreamReader(System.in));
 ```
