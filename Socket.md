@@ -48,4 +48,16 @@ Il ruolo può invertirsi qualora il server diventi client per un'invocazione di 
 
 Per rendere #distribuito un semplice programma, adottiamo il principio dell'astrazione, introducendo lo strato di trasparenza comprendente #Stub e #Skeleton.
 
-- #Stub:
+- #Stub: oggetto situato sul #Client, rappresentante l'oggetto server in locale. Presenta ed espone gli stessi metodi che vengono esposti sul server. Il suo compito principale è comunicare con lo #Skeleton. Ogni chiamata del client verso i metodi remoti dello #Stub genera una comunicazione tra esso e lo #Skeleton.
+- #Skeleton: oggetto situato sul #Server, è incaricato di:
+	1. effettuare l'invocazione del metodo richiesto sull'oggetto server;
+	2. ricevere il valore restituito dal metodo;
+	3. comunicare il suddetto valore allo #Stub, che lo restituisce verso il client.
+
+Ogni comunicazione fra stub e skeleton avviene attraverso un protocollo comune che deve prevedere come si indica il metodo da eseguire e come si inviano i parametri ed il valore restituito.
+Sia lo #Stub che lo #Skeleton implementano un'interfaccia comune, detta **interfaccia remota**, dove sono definiti i metodi che devono essere invocati in remoto.
+Ogni metodo, essendo remoto, viene dichiarato tale da poter lanciare eccezioni.
+Per reperire il riferimento all'oggetto remoto da parte del/dei client, è possibile avere un servizio disponibile, la cui locazione è conosciuta, che permetta di reperire l'indirizzo dell'oggetto di cui sappiamo solamente l'identificativo.
+
+
+Per un #socket si deve sempre aprire prima lo stream di output poiché, in caso si apra prima quello di input, l'applicazione rimarrà bloccata in attesa di leggere qualcosa nell'header che non ci sarà, poiché gli stream di output non hanno ancora scritto.
