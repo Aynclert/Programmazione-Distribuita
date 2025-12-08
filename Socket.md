@@ -43,4 +43,9 @@ ObjectInputStream inStream = new ObjectInputStream(socket.getInputStream());
 ObjectOutputStream outStream = new ObjectOutputStream(socket.getOutputStream());
 ```
 
+E' importante distinguere quando #Client e #Server sono usati nell'ambito di architetture distribuite e quando si descrive invece il ruolo di oggetti distribuiti; in quest'ultimo caso, infatti, ci si riferisce ad una singola chiamata di metodo: l'oggetto server rappresenta l'oggetto che riceve l'invocazione che viene effettuata dall'oggetto client. 
+Il ruolo può invertirsi qualora il server diventi client per un'invocazione di un metodo su un altro oggetto remoto. 
 
+Per rendere #distribuito un semplice programma, adottiamo il principio dell'astrazione, introducendo lo strato di trasparenza comprendente #Stub e #Skeleton.
+
+- #Stub:
