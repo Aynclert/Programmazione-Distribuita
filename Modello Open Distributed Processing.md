@@ -24,5 +24,3 @@ Indicano essenzialmente la qualità del sistema e specificano che la progettazio
 - **Sicuri**: così che utenti non autorizzati non possano accedere a dati sensibili;
 - **[[Trasparenza]]**: mascherando i dettagli e le differenze dell’ architettura sottostante che assicura la distribuzione dei servizi sulle componenti del sistema.
 
-
-
