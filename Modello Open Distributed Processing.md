@@ -22,4 +22,7 @@ Indicano essenzialmente la qualità del sistema e specificano che la progettazio
 - **Supporto per la qualità del servizio**: la *tolleranza ai malfunzionamenti* è una delle principali richieste di qualità del servizio di un sistema distribuito in quanto deve raggirare i malfunzionamenti utilizzando (dinamicamente) componenti alternative per fornire funzionalità che alcune componenti non sono in grado temporaneamente di fornire;
 - **Scalabili**: perché qualsiasi sistema distribuito accessibile da Internet può essere soggetto a picchi di carico non prevedibili e deve essere in grado di gestirli;
 - **Sicuri**: così che utenti non autorizzati non possano accedere a dati sensibili;
-- **[[Trasparenza]]**: mascherando i dettagli e le differenze dell’ architettura sottostante che assicura la distribuzione dei servizi sulle componenti del sistema
+- **[[Trasparenza]]**: mascherando i dettagli e le differenze dell’ architettura sottostante che assicura la distribuzione dei servizi sulle componenti del sistema.
+
+
+
