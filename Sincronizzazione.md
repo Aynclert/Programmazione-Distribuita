@@ -3,7 +3,22 @@
 I metodi synchronized permettono di risolvere semplicemente gli errori di concorrenza al costo di inefficienza. Per rendere un metodo tale basta aggiungere `synchronized` alla sua dichiarazione:
 
 ```Java
-DOPO
+public class SynchronizedCounter {
+
+	private int c = 0;
+	
+	public synchronized void increment() {
+		c++;
+	}
+	
+	public synchronized void decrement() {
+		c--;
+	}
+	
+	public synchronized int value() {
+		return c;
+	}
+}
 ```
 
 Quando un thread esegue un metodo #sincronizzato per un oggetto, gli altri thread che invocano metodi sincronizzati dello stesso oggetto sono sospesi fino al termine del primo thread. Quando un thread esce da un metodo sincronizzato, si stabilisce una relazione #happens-before con tutte le successive invocazioni dello stesso metodo sullo stesso oggetto. I cambi allo stato effettuati dal thread appena uscito sono visibili a tutti i thread.
@@ -18,7 +33,13 @@ Una volta rilasciato il lock, viene stabilita la relazione #happens-before. Quan
 E' possibile anche specificare l'oggetto di cui si usa il lock, attraverso le istruzioni sincronizzate:
 
 ```Java
-DOPO
+public void addName(String name) {
+	synchronized(this) {
+		lastName = name;
+		nameCount++;
+	}
+	nameList.add(name);
+}
 ```
 
 Le istruzioni sincronizzate sono utili per migliorare la concorrenza a grana fine (passaggio molto frequente tra una istruzione e l'altra).
