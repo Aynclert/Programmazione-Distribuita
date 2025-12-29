@@ -21,3 +21,5 @@ La specifica Java EE definisce i seguenti #componenti Java EE:
 Tutti i #componenti Java EE sono scritti in Java e compilati nello stesso linguaggio. Inoltre sono verificati per essere ben formati e conformi alle specifiche Java EE e distribuiti alla produzione, dove sono eseguiti e gestiti dal #Server Java EE.
 
 Il #Server Java EE fornisce servizi sottostanti sotto forma di [[Contenitori]] per ogni tipologia di #componenti.
+
+Java EE fornisce dei [[Servizi]] per le proprie applicazioni distribuite.

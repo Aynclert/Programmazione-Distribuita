@@ -10,3 +10,20 @@ Poiché l'architettura Java EE fornisce #servizi configurabili, i #componenti al
 - pooling delle risorse di connessione al #database;
 - #persistenza dei dati;
 - accesso alle API della piattaforma Java EE.
+
+Il processo di distribuzione installa i #componenti dell'applicazione Java EE nei #contenitori Java EE, i quali sono:
+- [[Contenitore EJB]];
+- [[Contenitore Web]];
+- [[Contenitore del client dell'applicazione]];
+- [[Contenitore di applet]].
+
+Una applicazione Java EE è pacchettizzata in una o più standard per la distribuzione su sistemi compatibili con Java EE. Ogni unità contiene:
+- uno o più #componenti funzionali ([[Enterprise Java Bean]], pagina Web, #servlet o #Applet);
+- un descrittore di distribuzione opzionale che ne descrive il contenuto (.xml).
+
+
+I #componenti distribuiti in contenitori possono essere richiamati tramite protocolli diversi:
+- HTTP: protocollo Web onnipresente nelle applicazioni moderne. L' #API lato #Client è definita nel pacchetto *java.net*, mentre quella lato #Server e definita dalle interfacce #servlet, #JSF e #JSP, nonché dai #servizi #Web #SOAP e #RESTful.
+- RMI/IIOP: [[Java RMI]] consente di chiamare oggetti remoti indipendentemente dal protocollo sottostante. RMI/IIOP è un'estensione di RMI utilizzata per l'integrazione con CORBA. Il linguaggio di descrizione dell'interfaccia Java consente ai componenti dell'applicazione Java EE di richiamare oggetti CORBA esterni utilizzando il protocollo IIOP.
+
+

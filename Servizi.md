@@ -1,0 +1,17 @@
+
+I #servizi offerti da Java EE per le #applicazioni distribuite sono:
+- **Java Transaction API**: #API di demarcazione delle #transazioni utilizzate dal contenitore e dall'applicazione. Fornisce un'interfaccia tra il gestore delle #transazioni e un gestore delle #risorse a livello di Service Provider Interface.
+- **Java Persistence API**: #API standard per il mapping relazionale agli oggetti. Con il suo #JPQL, puoi interrogare oggetti memorizzati nel #database sottostante.
+- **Convalida**: l'utilizzo del Bean Validation fornisce la dichiarazione dei #vincoli a livello di classe e metodo, e le funzioni di convalida.
+- [[Java Message Service]]: consente ai #componenti di comunicare in modo asincrono tramite i #messaggi. Suppota la messaggistica affidabile Point-to-Point ( #P2P) e il modello publisher-subscriber ( #pub-sub).
+- **Java Naming and Directory Interface ([[JMS]])**: viene utilizzata per accedere a sistemi di denominazione e directory. L'applicazione la usa per associare nomi a oggetti e trovare i suddetti in una directory. Viene usata in modo più trasparente attraverso l'[[Iniezione delle Dipendenze]].
+- **JavaMail**: implementa la possibilità di inviare e-mail.
+- **JavaBeans Activation Framework (JAF)**: fornisce un framework per la gestione dei dati in diversi tipi di MIME.
+- **XML processing (JAXP)**: fornisce supporto per l'analisi dei documenti #XML con le #API SAX, DOM e XSLT, mentre l' #API Streaming per XML (StAX) fornisce un' #API pull-parsing per #XML.
+- **JSON processing**: l' #API Java per JSON Processing (JSON-P) consente alle applicazioni di analizzare, generare, trasformare e interrogare JSON.
+- **Java EE Connector Architecture**: i connettori consentono di accedere a [[Livello EIS (Enterprise Information System)]] da un componente Java EE, quali #database, mainframe o programmi di pianificazione delle risorse aziendali (ERP).
+- **Servizi di sicurezza**: il servizio Java Authentication and Authorization Service (JAAS) consente ai servizi di autenticare e applicare i controlli di accesso agli utenti. Il #Contratto per i fornitori di servizi di autorizzazione di Java (JACC) consente ai fornitori di servizi di autorizzazione personalizzati di essere collegati a qualsiasi prodotto Java EE. L'interfaccia del fornitore di servizi di autenticazione Java per contenitori (JASPIC) definisce un'interfaccia standard mediante la quale i moduli di autenticazione possono essere integrati con i contenitori in modo che questi moduli possano stabilire le identità di autenticazione utilizzate dai contenitori.
+- **Servizi Web**: Java EE fornisce supporto per i servizi Web #SOAP e #RESTful. L'API per i servizi Web XML (JAX-WS) fornisce supporto per i servizi Web che utilizzano il protocollo #SOAP/HTTP. L'API Java per RESTful Web Services (JAX-RS) fornisce supporto per i servizi Web utilizzando lo stile REST.
+- [[Iniezione delle Dipendenze]]: da Java 5, alcune risolse (origini dati, fabbriche [[JMS]], unità di persistenza, [[Enterprise Java Bean]], ...) possono essere iniettati nei  #componenti gestiti. Java 7 amplia ciò con [[CDI]] e le specifiche DI.
+- **Gestione**: Java EE definice le API per la gestione di #contenitori e #Server mediante un [[Enterprise Java Bean]] di gestione speciale. L'API Java Management Extensions (JMX) viene utilizzata anche per fornire supporto gestionale.
+- **Distribuzione**: Java EE Deployment Specification definisce un contratto tra gli strumenti di distribuzione e i prodotti Java EE per standardizzare la distribuzione delle applicazioni.
