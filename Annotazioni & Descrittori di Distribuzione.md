@@ -19,7 +19,7 @@ public class ItemEJB implements ItemLocal, ItemRemote {
 }
 ```
 
-L'altro modo di dichiarare i metadati è usando i descrittori di implementazione. Un descrittore di implementazione (DD) fa riferimento a un file di configurazione XML distribuito con il componente nei #contenitori . 
+L'altro modo di dichiarare i metadati è usando i descrittori di implementazione. Un descrittore di implementazione (DD) fa riferimento a un file di configurazione #XML distribuito con il componente nei #contenitori . 
 I descrittori di implementazione devono essere impacchettati con i componenti nella directory speciale `META-INF` o `WEB-INF` da prendere in considerazione.
 
 **Se si utilizzano entrambi, i metadati vengono sovrascritti dal descrittore di implementazione**.
