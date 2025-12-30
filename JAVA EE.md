@@ -23,3 +23,7 @@ Tutti i #componenti Java EE sono scritti in Java e compilati nello stesso lingua
 Il #Server Java EE fornisce servizi sottostanti sotto forma di [[Contenitori]] per ogni tipologia di #componenti.
 
 Java EE fornisce dei [[Servizi]] per le proprie applicazioni distribuite.
+
+L'obiettivo di Java EE era considerare lo sviluppo di un'applicazione che potesse eseguire su qualsiasi (essere #portable) server applicativo senza modificare il codice o i file di configurazione. Il problema si risolse con la sintassi #JNDI per i nomi. 
+
+Lo sviluppo avviene tramite [[JCP]].
