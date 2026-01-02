@@ -53,4 +53,55 @@ public class NumberProducer {
 ```
 
 Alcuni metodi di produzione restituiscono oggetti che richiedono una distruzione esplicita, come una connessione #JDBC, una sessione [[JMS]] o un [[Entity Manager]].
-Se, per la creazione, CDI utilizza i #producers, per la distruzione utilizza i #Disposers, con annotazione @DIspose.
+Se, per la creazione, CDI utilizza i #producers, per la distruzione utilizza i #Disposers, con annotazione @Dispose.
+
+Ogni oggetto gestito da #CDI ha uno scopo ben preciso e un ciclo di vita che è legato a un contesto specifico. Con CDI, un bean è associato a un contesto e rimane in tale contesto fino a quando il bean non viene distrutto dal contenitore. Non c'è modo di rimuovere manualmente un bean da un contesto.
+CDI ha unito i livelli #Web e di servizio associandoli a scopi significativi. #CDI definisce i seguenti ambiti incorporati e fornisce anche punti di estensione in modo da poter creare il proprio:
+- **@ApplicationScoped**: si estende per l'intera durata di un'applicazione. Il bean viene creato una sola volta per tutta la durata dell'applicazione e viene scartato quando l'applicazione viene chiusa. E' utile per le classi di utilità o helper o per gli oggetti che memorizzano i dati condivisi dall'intera applicazione.
+- **@SessionScoped**: comprende diverse richieste HTTP o più invocazioni di metodi per la sessione di un singolo utente. Il bean viene creato per la durata di una sessione HTTP e viene scartato al termine della sessione. E' per gli oggetti necessari durante la sessione.
+- **@RequestScoped**: corrisponde a una singola richiesta HTTP o a una chiamata di un metodo. Il bean viene creato per la durata dell'invocazione del metodo e viene scartato al termine del metodo. Viene utilizzato per le classi di servizio o i bean di backup #JSF necessari solo per la durata di una richiesta HTTP.
+- **@ConversationScoped**: comprende più chiamate all'interno dei limiti della sessione con i punti iniziale e finale determinati dall'applicazione. Le conversazioni vengono utilizzate su più pagine come parte di un flusso di lavoro a più fasi.
+- **@Dependent**: il ciclo di vita è lo stesso del client. Un bean dipendente viene creato ogni volta che viene iniettato e il riferimento viene rimosso quando viene rimosso il target di iniezione. Questo è l'ambito predefinito per CDI.
+
+
+L'ambito della #conversation mantiene lo stato associato ad un utente, include più richieste ed è demarcato a livello di codice dall'applicazione. Un bean @ConversationScoped può essere utilizzato per un processo di lunga durata in cui vi è un inizio e una fine definiti.
+A differenza degli oggetti con ambito conversazione hanno un ciclo di vita ben definito che inizia e termina esplicitamente a livello di codice utilizzando l' #API Conversation.
+
+```Java
+@ConversationScoped
+public class CustomerCreatorWizard implements Serializable {
+
+	private Login login;
+	private Account account;
+	
+	@Inject
+	private CustomerService customerService;
+	
+	//avviene l'iniezione della conversazione
+	@Inject
+	private Conversation conversation;
+	
+	public void saveLogin(){
+		//avviene l'avvio della conversazione
+		conversation.begin();
+		
+		login = new Login();
+		//Sets login properties
+	}
+	
+	public void saveAccount(){
+		account = new Account();
+		//Sets account properties
+	}
+	
+	public void createCustomer(){
+		Customer customer = new Customer();
+		customer.setLogin(login);
+		customer.setAccount(account);
+		customerService.createCustomer(customer);
+		
+		//una volta richiamato l'ultimo passo, viene terminata la conversazione
+		conversation.end();
+	}
+}
+```
