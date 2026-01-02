@@ -32,3 +32,25 @@ Secondo la specifica #CDI, il contenitore tratta come un bean CDI qualsiasi clas
 - è una classe concreta, o è annotata #Decorator;
 - ha un costruttore predefinito senza parametri, o dichiara un costruttore annotato #Inject.
 Un bean può avere un ambito opzionale, un nome EL facoltativo, un insieme di collegamenti di #Interceptor e una gestione facoltativa del ciclo di vita.
+
+In CDI è possibile anche iniettare le primitive, i tipi di array e qualsiasi #POJO non abilitato in CDI grazie ai #Producers, con annotazione @Produces.
+
+Se un archivio non ha un *bean.xml* sotto la directory META-INF, #CDI non attiverà la scoperta dei bean e i relativi #POJO non potranno essere trattati come bean e di conseguenza essere iniettati. L'unico modo per essere in grado di iniettare #POJO è usare i campi o metodi #Producers .
+
+```Java
+public class NumberProducer {
+	@Produces @ThirteenDigits
+	private String prefix13digits = "13-";
+	
+	@Produces @ThirteenDigits
+	private int editorNumber = 84356;
+	
+	@Produces @Random
+	public double random() {
+		return Math.abs(new Random().nextInt());
+	}
+}
+```
+
+Alcuni metodi di produzione restituiscono oggetti che richiedono una distruzione esplicita, come una connessione #JDBC, una sessione [[JMS]] o un [[Entity Manager]].
+Se, per la creazione, CDI utilizza i #producers, per la distruzione utilizza i #Disposers, con annotazione @DIspose.
