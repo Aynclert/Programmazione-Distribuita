@@ -1,4 +1,5 @@
-La maggior parte delle specifiche Java EE 7 utilizza lo stesso modello di programmazione #POJO con alcuni metadati (annotazioni o XML) distribuiti in un contenitore. La maggior parte delle volte il POJO non implementa nemmeno un'interfaccia o estende una superclasse. Grazie ai metadati, il contenitore sa quali servizi applicare a questo componente distribuito. In Java EE 7, servlet, bean di backing JSF, EJB, entità, servizi Web #SOAP e REST sono classi annotate con descrittori di distribuzione #XML  facoltativi. 
+
+La maggior parte delle specifiche Java EE 7 utilizza lo stesso modello di programmazione, ovvero un #POJO con alcuni #metadati (annotazioni o #XML) distribuiti in un contenitore. La maggior parte delle volte il POJO non implementa nemmeno un'interfaccia o estende una superclasse. Grazie ai metadati, il contenitore sa quali servizi applicare a questo componente distribuito. In Java EE 7, #servlet, bean di backing #JSF, [[Enterprise Java Bean]], entità, servizi Web #SOAP e #REST sono classi annotate con descrittori di distribuzione #XML  facoltativi. 
 
 ```Java
 // bean di supporto JSF che è una classe Java con una sola annotazione CDI.
@@ -20,7 +21,7 @@ public class BookController {
 }
 ```
 
-Anche gli #EJB seguono lo stesso modello.  Se è necessario accedere a un EJB localmente, è sufficiente una semplice classe annotata senza interfaccia. Gli EJB possono anche essere distribuiti direttamente in un file war senza essere precedentemente impacchettati in un file jar. Ciò rende EJB il componente transazionale più semplice che può essere utilizzato da semplici applicazioni Web a quelle aziendali complesse.
+Anche gli #EJB seguono lo stesso modello.  Se è necessario accedere a un EJB localmente, è sufficiente una semplice classe annotata senza interfaccia. Gli EJB possono anche essere distribuiti direttamente in un file .war senza essere precedentemente impacchettati in un file .jar. Ciò rende EJB il componente transazionale più semplice che può essere utilizzato da semplici applicazioni Web a quelle aziendali complesse.
 
 ```Java
 @Stateless
@@ -38,8 +39,8 @@ public class BookEJB {
 }
 ```
 
-I servizi web restful si sono fatti strada nelle applicazioni moderne. Java EE 7 risponde alle esigenze delle imprese migliorando le specifiche JAX-RS. 
-Un servizio web RESTful è una classe Java annotata che risponde alle azioni HTTP:
+I servizi web #RESTful  si sono fatti strada nelle applicazioni moderne. Java EE 7 risponde alle esigenze delle imprese migliorando le specifiche JAX-RS. 
+Un servizio web #RESTful è una classe Java annotata che risponde alle azioni HTTP:
 
 ```Java
 @Path("books")

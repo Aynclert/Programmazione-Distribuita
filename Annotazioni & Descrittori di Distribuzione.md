@@ -1,3 +1,4 @@
+
 Nella programmazione ci sono due approcci:
 - **Programmazione imperativa**: specifica l'algoritmo per raggiungere un obiettivo.
 - **Programmazione dichiarativa**: specifica come raggiungere questo obiettivo.

@@ -24,6 +24,6 @@ Il #Server Java EE fornisce servizi sottostanti sotto forma di [[Contenitori]] p
 
 Java EE fornisce dei [[Servizi]] per le proprie applicazioni distribuite.
 
-L'obiettivo di Java EE era considerare lo sviluppo di un'applicazione che potesse eseguire su qualsiasi (essere #portable) server applicativo senza modificare il codice o i file di configurazione. Il problema si risolse con la sintassi #JNDI per i nomi. 
+L'obiettivo di Java EE era di consentire lo sviluppo di un'applicazione che potesse essere eseguita su qualsiasi server applicativo senza modificare il codice o i file di configurazione (essere #portable). Il problema si risolse con la sintassi [[JNDI]] per i nomi. 
 
 Lo sviluppo avviene tramite [[JCP]].
