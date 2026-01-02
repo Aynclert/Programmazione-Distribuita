@@ -65,7 +65,7 @@ CDI ha unito i livelli #Web e di servizio associandoli a scopi significativi. #C
 
 
 L'ambito della #conversation mantiene lo stato associato ad un utente, include più richieste ed è demarcato a livello di codice dall'applicazione. Un bean @ConversationScoped può essere utilizzato per un processo di lunga durata in cui vi è un inizio e una fine definiti.
-A differenza degli oggetti con ambito conversazione hanno un ciclo di vita ben definito che inizia e termina esplicitamente a livello di codice utilizzando l' #API Conversation.
+A differenza degli oggetti con ambito conversazione hanno un ciclo di vita ben definito che inizia e termina esplicitamente a livello di codice utilizzando l' #API #Conversation.
 
 ```Java
 @ConversationScoped
