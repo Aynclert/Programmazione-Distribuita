@@ -3,6 +3,9 @@ public class MDB implements MessageListener{
     @Inject
     private EntityManager em;
 
+    @EJB
+    private EJB ejb;
+
     public void onMessage(Message message){
         try{
             MessageWrapper messageWrapper = message.getBody(MessageWrapper.class);
