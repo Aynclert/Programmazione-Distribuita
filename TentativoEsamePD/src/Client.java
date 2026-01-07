@@ -18,5 +18,7 @@ public class Client {
 
         Auto auto = new Auto("Ferrari 360", 69000, new Date(2002,11, 01 ), "in vendita");
         ejb.add(auto);
+
+
     }
 }

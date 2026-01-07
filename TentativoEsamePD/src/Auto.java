@@ -27,8 +27,54 @@ public class Auto implements Serializable {
         this.statoAuto = statoAuto;
     }
 
+    public int getId() {
+        return id;
+    }
 
-    //setter, getter e toString
+
+    public String getNomeAuto() {
+        return nomeAuto;
+    }
+
+    public void setNomeAuto(String nomeAuto) {
+        this.nomeAuto = nomeAuto;
+    }
+
+    public int getChilometraggio() {
+        return chilometraggio;
+    }
+
+    public void setChilometraggio(int chilometraggio) {
+        this.chilometraggio = chilometraggio;
+    }
+
+    public Date getAnnoImmatricolazione() {
+        return annoImmatricolazione;
+    }
+
+
+
+    public void setAnnoImmatricolazione(Date annoImmatricolazione) {
+        this.annoImmatricolazione = annoImmatricolazione;
+    }
+
+    public String getStatoAuto() {
+        return statoAuto;
+    }
+
+    public void setStatoAuto(String statoAuto) {
+        this.statoAuto = statoAuto;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "nomeAuto='" + nomeAuto + '\'' +
+                ", chilometraggio=" + chilometraggio +
+                ", annoImmatricolazione=" + annoImmatricolazione +
+                ", statoAuto='" + statoAuto + '\'' +
+                '}';
+    }
 
     @PostPersist
     @PostUpdate

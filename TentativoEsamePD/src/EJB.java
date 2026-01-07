@@ -1,3 +1,5 @@
+import java.util.List;
+
 @WebService
 @Stateless
 @LocalBean
@@ -20,11 +22,19 @@ public class EJB implements EJBRemote{
     }
 
     public List<Auto> findInVendita(){
-        return em.createNamedQuery("findInVendita").getResultList;
+        return em.createNamedQuery("findInVendita").getResultList();
     }
 
     public Auto findByID(int id){
         String query = "SELECT a FROM Auto a WHERE a.id =" + id;
-        return em.createDynamicQuery(query).getSingleResult;
+        return em.createQuery(query).getSingleResult();
+    }
+
+    @WebMethod
+    public String findByID2(int id){
+        String query = "SELECT a FROM Auto a WHERE a.id =" + id;
+        Auto auto = em.createQuery(query).getSingleResult();
+        String result = auto.getNomeAuto() + ", " + auto.getChilometraggio() + " km";
+        return result;
     }
 }
