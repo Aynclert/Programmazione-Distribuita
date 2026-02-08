@@ -5,7 +5,7 @@ Questo schema di base segue il modello di osservatore/osservabile della "Gang of
 I produttori di eventi attivano gli eventi utilizzando l'interfaccia @Event. Un produttore solleva gli #eventi chiamando il metodo **fire()**, passa l'oggetto evento e non dipende dall'osservatore.
 
 ```Java
-public class BookService {
+public class BookService{
 	@Inject
 	private NumberGenerator numberGenerator;
 	
@@ -24,7 +24,7 @@ public class BookService {
 L'evento è così mandato ad un osservatore, il quale può essere un bean con uno o più metodi osservatori. Ogni parametro del metodo dell'osservatore è annotato con @Observes.
 
 ```Java
-public class InventoryService {
+public class InventoryService{
 	@Inject
 	private Logger logger;
 	Listz<Book> inventory = new ArrayList<>();
